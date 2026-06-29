@@ -1,5 +1,6 @@
-secrets.nix
-secrets/
-*.secret
+Config.nix
+*.sops
 *.key
 .env
+.sops.yaml
+Secrets/Secrets.yaml
