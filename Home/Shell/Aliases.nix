@@ -11,4 +11,6 @@
   paste = "wl-paste";
 
   nrb = "cd ~/NixOS;git add -A;sudo nixos-rebuild switch --flake ~/NixOS/#NixOS";
+
+  sopsedit = "nix-shell -p sops --run 'sops ~/NixOS/Secrets/Secrets.yaml";
 }

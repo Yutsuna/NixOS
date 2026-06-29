@@ -36,11 +36,7 @@ Then go to the root of the repo
 ```bash
 cd NixOS
 ```
-Create `Config.nix`
-```bash
-mv Config.example.nix Config.nix
-```
-and edit it with your informations.
+Edit `Config.nix` with your own informations
 
 Once that done, build the OS:
 ```bash

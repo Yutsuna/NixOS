@@ -18,8 +18,4 @@
   git_panel = {
     dock = "left";
   };
-
-  assistant = {
-    dock = "right";
-  };
 }
