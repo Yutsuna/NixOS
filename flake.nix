@@ -9,18 +9,33 @@
     };
     claude-code-nix.url = "github:sadjow/claude-code-nix";
     claude-code-nix.inputs.nixpkgs.follows = "nixpkgs";
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, claude-code-nix, ... }@inputs: {
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      claude-code-nix,
+      sops-nix,
+      ...
+    }@inputs:
+    {
 
-    nixosConfigurations.NixOS = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = { inherit claude-code-nix; vars = import ./Config.nix; };
-      modules = [
-        ./System
-        home-manager.nixosModules.home-manager
-        ./Home
-      ];
+      nixosConfigurations.NixOS = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {
+          inherit claude-code-nix;
+          vars = import ./Config.nix;
+        };
+        modules = [
+          sops-nix.nixosModules.sops
+          ./System
+          home-manager.nixosModules.home-manager
+          ./Home
+        ];
+      };
     };
-  };
 }
