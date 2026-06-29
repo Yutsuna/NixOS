@@ -4,6 +4,7 @@
     ./Configuration.nix
     ./HardwareConfiguration.nix
     ./UnfreePackages.nix
+    ./Sops.nix
   ];
 
 }
