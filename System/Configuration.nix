@@ -83,6 +83,8 @@
     git
     wget
     curl
+    sops
+    ssh-to-age
   ];
 
   fonts.packages = with pkgs; [
