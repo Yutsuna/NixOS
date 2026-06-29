@@ -36,11 +36,31 @@ Then go to the root of the repo
 ```bash
 cd NixOS
 ```
-And edit  [**Config.nix**](./../Config.nix) with your informations.
+Create `Config.nix`
+```bash
+mv Config.example.nix Config.nix
+```
+and edit it with your informations.
 
 Once that done, build the OS:
 ```bash
 git add -A && sudo nixos-rebuild switch --flake ~/NixOS/#NixOS
+```
+
+## Features
+
+I use Secrets ! So every API | Secrets keys are fully encrypted before being pushed.
+If you want to use secrets too:
+
+First create a **secret** key:
+```bash
+nix-shell -p ssh-to-age --run 'cat /etc/ssh/ssh_host_ed25519_key.pub | ssh-to-age'
+```
+
+Then edit your secret 
+
+```bash
+nix-shell -p sops --run 'sops Secrets/Secrets.yaml'
 ```
 
 ---
