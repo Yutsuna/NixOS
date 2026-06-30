@@ -1,7 +1,8 @@
 {
   ui_font_size = 15;
-  ui_font_family = "JetBrains Mono";
-  buffer_font_size = 15;
+  # ui_font_family = "JetBrains Mono";
+  ui_font_family = ".ZedSans";
+  buffer_font_size = 14;
   buffer_font_family = "JetBrains Mono";
 
   theme = "Catppuccin Frappé (Blur) [Heavy]";
