@@ -1,4 +1,9 @@
-{ pkgs, vars, ... }:
+{
+  pkgs,
+  vars,
+  nur,
+  ...
+}:
 
 {
 
@@ -13,12 +18,14 @@
       "https://hyprland.cachix.org"
       "https://zed.cachix.org"
       "https://claude-code.cachix.org"
+      "https://nix-community.cachix.org"
     ];
     trusted-public-keys = [
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       "zed.cachix.org-1:/pHQ6dpMsAZk2DiP4WCL0p9YDNKWj2Q5FL20bNmw1cU="
       "claude-code.cachix.org-1:YeXf2aNu7UTX8Vwrze0za1WEDS+4DuI2kVeWEE4fsRk="
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
     ];
 
   };
@@ -52,7 +59,6 @@
   };
 
   programs = {
-    firefox.enable = true;
     hyprland.enable = true;
     zsh.enable = true;
 
@@ -70,6 +76,9 @@
     };
   };
 
+  nixpkgs.overlays = [
+  ];
+
   users.users.${vars.user.name} = {
     isNormalUser = true;
     extraGroups = [
@@ -85,6 +94,7 @@
     curl
     sops
     ssh-to-age
+    cachix
   ];
 
   fonts.packages = with pkgs; [
