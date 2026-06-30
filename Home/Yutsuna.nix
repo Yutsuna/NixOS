@@ -1,7 +1,7 @@
-{ config
-  , pkgs
-  , vars
-  , ...
+{
+  pkgs,
+  vars,
+  ...
 }:
 {
   home = {
@@ -16,8 +16,7 @@
   imports = [
     ./Hyprland/Hyprland.nix
     ./Editors/ZedEditor/ZedEditor.nix
-    ./Shell/Zsh.nix
-    ./Shell/Git.nix
+    ./Shell
     ./Terminal
     ./AI
     ./Workspace
