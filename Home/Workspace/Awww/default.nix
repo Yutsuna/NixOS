@@ -13,7 +13,7 @@
     };
 
     Service = {
-      ExecStart = "${pkgs.awww}/bin/awwwd";
+      ExecStart = "${pkgs.awww}/bin/awww-daemon";
       Restart = "on-failure";
     };
 
