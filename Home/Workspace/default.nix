@@ -2,6 +2,7 @@
 
   imports = [
     ./Waybar
+    ./Swaync
   ];
 
 }

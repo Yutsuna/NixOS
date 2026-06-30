@@ -157,7 +157,7 @@
     format-alt-click = "click-right";
     on-click = "exec";
     on-click-middle = "xdg-open https://wttr.in/";
-    on-click-right = "exec wttrbar --fahrenheit";
+    on-click-right = "exec wttrbar";
     return-type = "json";
     tooltip = true;
   };

@@ -2,7 +2,7 @@
 let
 
   settings = [ (import ./Settings.nix) ];
-  style = builtins.readFile ./styles.css;
+  style = builtins.readFile ./styles.scss;
 in
 {
   programs.waybar = {
