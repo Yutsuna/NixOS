@@ -14,12 +14,13 @@
   };
 
   imports = [
-    ./Hyprland/Hyprland.nix
-    ./Editors/ZedEditor/ZedEditor.nix
+    ./Hyprland
+    ./Editors
     ./Shell
     ./Terminal
     ./AI
     ./Workspace
+    ./Browser
   ];
 
   home.packages = with pkgs; [
