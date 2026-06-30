@@ -4,25 +4,36 @@
 
     font = {
       name = "JetBrains Mono";
-      size = 12;
+      size = 11.0;
     };
-
-    # general = {
-    #   gaps_in = 3;
-    #   gaps_out = 8;
-    #   border_size = 2;
-    #   active_border = rgba (eb6f92ff) rgba (c4a7e7ff) 45 deg;
-    #   inactive_border = rgba (31748 fcc) rgba (9 ccfd8cc) 45 deg;
-    #   layout = "dwindle";
-    #   resize_on_border = true;
-    # };
 
     settings = {
       shell = "zsh";
-      scrollback_lines = 2000;
-      wheel_scroll_min_lines = 1;
-      window_padding_width = 10;
+
       confirm_os_window_close = 0;
+      scrollback_lines = 10000;
+      enable_audio_bell = false;
+      wheel_scroll_min_lines = 1;
+      window_padding_width = 4;
+      cursor_tail = 1;
+      allow_hyperlinks = true;
+
+      disable_ligatures = "never";
+
+      gaps_in = "3";
+      gaps_out = "8";
+      border_size = "2";
+      active_border = "rgba(eb6f92ff) rgba(c4a7e7ff) 45deg";
+      inactive_border = "rgba(31748fcc) rgba(9ccfd8cc) 45deg";
+      layout = "dwindle";
+      resize_on_border = "true";
+
+      tab_title_template = "{index}";
+      active_tab_font_style = "normal";
+      inactive_tab_font_style = "normal";
+      tab_bar_style = "powerline";
+      tab_powerline_style = "round";
+
       background_opacity = "0.85";
 
       foreground = "#c6d0f5";
@@ -82,6 +93,25 @@
       color7 = "#b5bfe2";
       color15 = "#a5adce";
     };
+
+    extraConfig = ''
+      font_features JetBrainsMono-Regular +calt +liga +kern
+      font_features JetBrainsMono-Bold +calt +liga +kern
+      font_features JetBrainsMono-Italic +calt +liga +kern
+      font_features JetBrainsMono-BoldItalic +calt +liga +kern
+      font_features JetBrainsMono-ExtraBold +calt +liga +kern
+      font_features JetBrainsMono-ExtraBoldItalic +calt +liga +kern
+      font_features JetBrainsMono-Medium +calt +liga +kern
+      font_features JetBrainsMono-MediumItalic +calt +liga +kern
+      font_features JetBrainsMono-SemiBold +calt +liga +kern
+      font_features JetBrainsMono-SemiBoldItalic +calt +liga +kern
+      font_features JetBrainsMono-Thin +calt +liga +kern
+      font_features JetBrainsMono-ThinItalic +calt +liga +kern
+      font_features JetBrainsMono-Light +calt +liga +kern
+      font_features JetBrainsMono-LightItalic +calt +liga +kern
+      font_features JetBrainsMono-ExtraLight +calt +liga +kern
+      font_features JetBrainsMono-ExtraLightItalic +calt +liga +kern
+    '';
 
     shellIntegration.enableZshIntegration = true;
   };
