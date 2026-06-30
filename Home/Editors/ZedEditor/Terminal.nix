@@ -17,6 +17,6 @@
   env = {
     TERM = "kitty";
   };
-  font_family = "JetBrains Mono";
+  font_family = "JetBrainsMono Nerd Font";
   working_directory = "current_project_directory";
 }

@@ -3,7 +3,7 @@
     enable = true;
 
     font = {
-      name = "JetBrains Mono";
+      name = "JetBrainsMono Nerd Font";
       size = 11.0;
     };
 
@@ -95,22 +95,22 @@
     };
 
     extraConfig = ''
-      font_features JetBrainsMono-Regular +calt +liga +kern
-      font_features JetBrainsMono-Bold +calt +liga +kern
-      font_features JetBrainsMono-Italic +calt +liga +kern
-      font_features JetBrainsMono-BoldItalic +calt +liga +kern
-      font_features JetBrainsMono-ExtraBold +calt +liga +kern
-      font_features JetBrainsMono-ExtraBoldItalic +calt +liga +kern
-      font_features JetBrainsMono-Medium +calt +liga +kern
-      font_features JetBrainsMono-MediumItalic +calt +liga +kern
-      font_features JetBrainsMono-SemiBold +calt +liga +kern
-      font_features JetBrainsMono-SemiBoldItalic +calt +liga +kern
-      font_features JetBrainsMono-Thin +calt +liga +kern
-      font_features JetBrainsMono-ThinItalic +calt +liga +kern
-      font_features JetBrainsMono-Light +calt +liga +kern
-      font_features JetBrainsMono-LightItalic +calt +liga +kern
-      font_features JetBrainsMono-ExtraLight +calt +liga +kern
-      font_features JetBrainsMono-ExtraLightItalic +calt +liga +kern
+      font_features JetBrainsMonoNerdFont-Regular +calt +liga +kern
+      font_features JetBrainsMonoNerdFont-Bold +calt +liga +kern
+      font_features JetBrainsMonoNerdFont-Italic +calt +liga +kern
+      font_features JetBrainsMonoNerdFont-BoldItalic +calt +liga +kern
+      font_features JetBrainsMonoNerdFont-ExtraBold +calt +liga +kern
+      font_features JetBrainsMonoNerdFont-ExtraBoldItalic +calt +liga +kern
+      font_features JetBrainsMonoNerdFont-Medium +calt +liga +kern
+      font_features JetBrainsMonoNerdFont-MediumItalic +calt +liga +kern
+      font_features JetBrainsMonoNerdFont-SemiBold +calt +liga +kern
+      font_features JetBrainsMonoNerdFont-SemiBoldItalic +calt +liga +kern
+      font_features JetBrainsMonoNerdFont-Thin +calt +liga +kern
+      font_features JetBrainsMonoNerdFont-ThinItalic +calt +liga +kern
+      font_features JetBrainsMonoNerdFont-Light +calt +liga +kern
+      font_features JetBrainsMonoNerdFont-LightItalic +calt +liga +kern
+      font_features JetBrainsMonoNerdFont-ExtraLight +calt +liga +kern
+      font_features JetBrainsMonoNerdFont-ExtraLightItalic +calt +liga +kern
     '';
 
     shellIntegration.enableZshIntegration = true;
