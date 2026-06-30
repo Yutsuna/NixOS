@@ -35,7 +35,7 @@
 
       search = {
         force = true;
-        default = "Google";
+        default = "google";
       };
     };
   };
