@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ ... }:
 
 let
 
@@ -20,7 +20,7 @@ in
         "docker"
         "z"
         "vi-mode"
-	"command-not-found"
+        "command-not-found"
       ];
     };
 
