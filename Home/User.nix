@@ -27,7 +27,6 @@
 
   home.packages = with pkgs; [
     vim
-    wl-clipboard
   ];
 
   home.stateVersion = "26.05";

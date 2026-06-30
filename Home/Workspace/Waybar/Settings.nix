@@ -1,4 +1,9 @@
 {
+  vars,
+  ...
+}:
+
+{
   layer = "top";
   position = "top";
 
@@ -151,7 +156,7 @@
   };
   "custom/weather" = {
     interval = 3600;
-    exec = "wttrbar";
+    exec = "wttrbar --location ${vars.location}";
     format = "{text}℃";
     format-alt = "{on-click-right}℉";
     format-alt-click = "click-right";

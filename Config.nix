@@ -16,4 +16,7 @@
     rootUUID = "cec5ba6d-ed28-40b6-bf78-55fc36391413";
     bootUUID = "C2FD-FF2F";
   };
+
+  location = "Strasbourg";
+
 }
