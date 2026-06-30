@@ -1,0 +1,177 @@
+@define-color base00 #303446;
+@define-color base01 #292c3c;
+@define-color base02 #414559;
+@define-color base03 #51576d;
+@define-color base04 #626880;
+@define-color base05 #c6d0f5;
+@define-color base06 #f2d5cf;
+@define-color base07 #babbf1;
+@define-color base08 #e78284;
+@define-color base09 #ef9f76;
+@define-color base0A #e5c890;
+@define-color base0B #a6d189;
+@define-color base0C #81c8be;
+@define-color base0D #8caaee;
+@define-color base0E #ca9ee6;
+@define-color base0F #eebebe;
+
+* {
+    font-family:
+        "JetBrainsMono Nerd Font", "JetBrainsMono NF", "JetBrainsMonoNerdFont",
+        sans-serif;
+    font-size: 12px;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+tooltip {
+    background: @base00;
+    border-radius: 15px;
+}
+
+tooltip label {
+    color: @base05;
+}
+
+#cpu,
+#custom-exit,
+#tray,
+#network {
+    border-radius: 15px 0px 0px 15px;
+    margin: 3px 0px 3px 2px;
+    padding: 0px 5px 0px 15px;
+    background: @base00;
+}
+
+#memory,
+#pulseaudio,
+#custom-notification {
+    border-radius: 0px 15px 15px 0px;
+    margin: 3px 2px 3px 0px;
+    padding: 0px 10px 0px 5px;
+    background: @base00;
+}
+
+#window,
+#clock,
+#custom-weather,
+#workspaces {
+    border-radius: 15px;
+    margin: 3px 4px;
+    padding: 0px 10px;
+    background: @base00;
+}
+
+#idle_inhibitor,
+#custom-recorder {
+    border-radius: 0px;
+    margin: 3px 0px;
+    padding: 0px 14px;
+    background: @base00;
+}
+
+#workspaces {
+    background: @base00;
+    padding: 0px 1px;
+}
+
+#workspaces button {
+    padding: 0px 5px;
+    border-radius: 15px;
+    margin: 4px 3px;
+    background: @base00;
+    background-size: 300% 300%;
+    animation: gradient_horizontal 15s ease infinite;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+    padding: 0px 5px;
+    border-radius: 15px;
+    margin: 4px 3px;
+    color: @base00;
+    background: @base0E;
+    background-size: 300% 300%;
+    animation: gradient_horizontal 15s ease infinite;
+    transition: all 0.3s ease;
+    opacity: 1;
+    min-width: 40px;
+}
+
+#workspaces button:hover {
+    border-radius: 15px;
+    background: @base03;
+    background-size: 300% 300%;
+    animation: gradient_horizontal 15s ease infinite;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+@keyframes gradient_horizontal {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes swiping {
+    0% {
+        background-position: 0% 200%;
+    }
+    100% {
+        background-position: 200% 200%;
+    }
+}
+
+#cpu {
+    color: @base0D;
+}
+#memory {
+    color: @base0D;
+}
+#disk {
+    color: @base03;
+}
+#battery {
+    color: @base08;
+}
+
+#window * {
+    color: @base0C;
+}
+#clock {
+    color: @base0B;
+}
+
+#custom-exit {
+    color: @base0A;
+}
+#custom-recorder {
+    color: @base0A;
+}
+#idle_inhibitor {
+    color: @base0A;
+}
+#pulseaudio {
+    color: @base0A;
+}
+#custom-weather {
+    color: @base09;
+}
+#network {
+    color: @base08;
+}
+#tray {
+    color: @base08;
+}
+#custom-notification {
+    color: @base08;
+}
