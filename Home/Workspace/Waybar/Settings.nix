@@ -8,12 +8,15 @@
   position = "top";
 
   modules-center = [
-    "hyprland/window"
     "clock"
   ];
 
   modules-left = [
     "hyprland/workspaces"
+    "cpu"
+    "gpu"
+    "memory"
+    "disk"
   ];
 
   modules-right = [
@@ -40,21 +43,19 @@
     tooltip = true;
     tooltip-format = "<big>{:%A, %B %d}</big>";
   };
-  "hyprland/window" = {
-    max-length = 25;
-    separate-outputs = false;
-    rewrite = {
-      "" = "Empty Desktop";
-    };
-  };
   "memory" = {
     interval = 5;
-    format = " {text}%";
+    format = " {percentage}%";
     tooltip = true;
   };
   "cpu" = {
     interval = 5;
     format = " {usage:2}%";
+    tooltip = true;
+  };
+  "gpu" = {
+    device = "${vars.hardware.gpu_device}";
+    format = " {usage:2}";
     tooltip = true;
   };
   "disk" = {
@@ -159,8 +160,6 @@
     interval = 3600;
     exec = "wttrbar --location ${vars.location}";
     format = "{text}℃";
-    format-alt = "{on-click-right}℉";
-    format-alt-click = "click-right";
     on-click = "exec";
     on-click-middle = "xdg-open https://wttr.in/";
     on-click-right = "exec wttrbar";

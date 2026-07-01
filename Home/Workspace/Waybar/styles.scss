@@ -54,7 +54,6 @@ tooltip label {
     padding: 0px 10px 0px 5px;
 }
 
-#window,
 #clock,
 #custom-weather,
 #battery,
@@ -104,11 +103,9 @@ tooltip label {
 }
 
 #cpu,
-#memory {
+#memory,
+#disk {
     color: @base0D;
-}
-#window * {
-    color: @base0C;
 }
 #clock {
     color: @base0B;
