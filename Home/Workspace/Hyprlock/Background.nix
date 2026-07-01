@@ -3,7 +3,7 @@
   ...
 }:
 let
-  cyberpunk = "${self}/Assets/Cyberpunk.png";
+  cyberpunk = "${self}/Assets/Wallpapers/Cyberpunk.png";
 in
 [
   {

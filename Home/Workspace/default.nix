@@ -16,6 +16,7 @@
     ./Swaync
     ./Awww
     ./Hyprlock
+    ./Wlogout
   ];
 
 }

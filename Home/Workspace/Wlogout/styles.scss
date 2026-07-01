@@ -1,0 +1,79 @@
+@define-color base #303446;
+@define-color mantle #292c3c;
+@define-color surface0 #414559;
+@define-color surface1 #51576d;
+@define-color surface2 #626880;
+@define-color text #c6d0f5;
+@define-color rosewater #f2d5cf;
+@define-color lavender #babbf1;
+@define-color red #e78284;
+@define-color peach #ef9f76;
+@define-color yellow #e5c890;
+@define-color green #a6d189;
+@define-color teal #81c8be;
+@define-color blue #8caaee;
+@define-color mauve #ca9ee6;
+@define-color flamingo #eebebe;
+
+window {
+    font-family: monospace;
+    font-size: 14pt;
+    color: @text;
+    background-color: rgba(48, 52, 70, 0.5);
+}
+
+button {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+    border: none;
+    background-color: @surface1;
+    margin: 5px;
+    transition:
+        box-shadow 0.2s ease-in-out,
+        background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: @surface2;
+}
+
+button:focus {
+    background-color: @mauve;
+    color: @base;
+}
+
+#lock {
+    background-image: image(url("icons/lock.png"));
+}
+#lock:focus {
+    background-image: image(url("icons/lock-hover.png"));
+}
+
+#logout {
+    background-image: image(url("icons/logout.png"));
+}
+#logout:focus {
+    background-image: image(url("icons/logout-hover.png"));
+}
+
+#suspend {
+    background-image: image(url("icons/sleep.png"));
+}
+#suspend:focus {
+    background-image: image(url("icons/sleep-hover.png"));
+}
+
+#shutdown {
+    background-image: image(url("icons/power.png"));
+}
+#shutdown:focus {
+    background-image: image(url("icons/power-hover.png"));
+}
+
+#reboot {
+    background-image: image(url("icons/restart.png"));
+}
+#reboot:focus {
+    background-image: image(url("icons/restart-hover.png"));
+}
