@@ -1,20 +1,29 @@
-@define-color base00 #303446;
-@define-color base01 #292c3c;
-@define-color base02 #414559;
-@define-color base03 #51576d;
-@define-color base04 #626880;
-@define-color base05 #c6d0f5;
-@define-color base06 #f2d5cf;
-@define-color base07 #babbf1;
-@define-color base08 #e78284;
-@define-color base09 #ef9f76;
-@define-color base0A #e5c890;
-@define-color base0B #a6d189;
-@define-color base0C #81c8be;
-@define-color base0D #8caaee;
-@define-color base0E #ca9ee6;
-@define-color base0F #eebebe;
+@define-color base00 #303446; /* Base */
+@define-color base01 #292c3c; /* Mantle */
+@define-color base02 #414559; /* Surface 0 */
+@define-color base03 #51576d; /* Surface 1 */
+@define-color base04 #626880; /* Surface 2 */
+@define-color base05 #c6d0f5; /* Text */
+@define-color base06 #f2d5cf; /* Rosewater */
+@define-color base07 #babbf1; /* Lavender */
+@define-color base08 #e78284; /* Red */
+@define-color base09 #ef9f76; /* Peach */
+@define-color base0A #e5c890; /* Yellow */
+@define-color base0B #a6d189; /* Green */
+@define-color base0C #81c8be; /* Teal */
+@define-color base0D #8caaee; /* Blue */
+@define-color base0E #ca9ee6; /* Mauve */
+@define-color base0F #eebebe; /* Flamingo */
+@define-color base10 #292c3c; /* Mantle (Darker) */
+@define-color base11 #232634; /* Crust (Darkest) */
+@define-color base12 #ea999c; /* Maroon */
+@define-color base13 #f2d5cf; /* Rosewater (Bright) */
+@define-color base14 #a6d189; /* Green (Bright) */
+@define-color base15 #99d1db; /* Sky */
+@define-color base16 #85c1dc; /* Sapphire */
+@define-color base17 #f4b8e4; /* Pink */
 
+/** --- globals --- */
 * {
     font-family:
         "JetBrainsMono Nerd Font", "JetBrainsMono NF", "JetBrainsMonoNerdFont",
@@ -27,7 +36,7 @@ window#waybar {
 }
 
 tooltip {
-    background: @base00;
+    background: @base11;
     border: 1px solid @base02;
     border-radius: 10px;
 }
@@ -37,6 +46,7 @@ tooltip label {
     padding: 4px;
 }
 
+/** --- moitié gauche d'une pillule multiple --- */
 #cpu,
 #custom-exit,
 #network {
@@ -46,33 +56,39 @@ tooltip label {
     padding: 0px 5px 0px 15px;
 }
 
-#memory,
-#pulseaudio {
+/** --- moitié droite d'une pilule multiple --- */
+#disk,
+#custom-notification {
     background: @base00;
     border-radius: 0px 15px 15px 0px;
     margin: 3px 2px 3px 0px;
-    padding: 0px 10px 0px 5px;
+    padding: 0px 15px 0px 5px;
 }
 
+/** --- pilules autonomes --- */
 #clock,
+#pulseaudio,
 #custom-weather,
 #battery,
-#tray,
-#custom-notification {
+#tray {
     background: @base00;
     border-radius: 15px;
     margin: 3px 4px;
     padding: 0px 12px;
 }
 
+/** --- milieux de pilules multiples --- */
+#memory,
+#custom-gpu,
 #idle_inhibitor,
 #custom-recorder {
     background: @base00;
     border-radius: 0px;
     margin: 3px 0px;
-    padding: 0px 14px;
+    padding: 0px 10px;
 }
 
+/** --- workspaces --- */
 #workspaces {
     background: @base00;
     border-radius: 15px;
@@ -91,7 +107,7 @@ tooltip label {
 }
 
 #workspaces button.active {
-    background: @base0E;
+    background: @base17;
     color: @base00;
     min-width: 40px;
     opacity: 1;
@@ -102,33 +118,50 @@ tooltip label {
     opacity: 0.9;
 }
 
-#cpu,
-#memory,
-#disk {
-    color: @base0D;
+/* --- pilule systeme [ CPU | GPU | RAM | DISK ] --- */
+#cpu {
+    color: @base0E; /* Mauve */
 }
-#clock {
-    color: @base0B;
+#custom-gpu {
+    color: @base0D; /* Bleu */
+}
+#memory {
+    color: @base16; /* Saphir */
+}
+#disk {
+    color: @base15; /* Sky */
 }
 
-#custom-exit,
+/* --- date & heure --- */
+#clock {
+    color: @base0C; /* Teal */
+}
+
+/* --- pilules de droite [ AUDI | MÉTÉO | BATTERIE ] --- */
 #pulseaudio {
-    color: @base0A;
+    color: @base0A; /* Jaune */
 }
 #custom-weather {
-    color: @base09;
+    color: @base09; /* Pêche */
 }
 #battery {
-    color: @base0F;
+    color: @base12; /* Maroon */
 }
-#tray,
-#network,
-#custom-notification {
-    color: @base08;
+#tray {
+    color: @base0F; /* Flamant Rose */
 }
 
-#disk {
-    color: @base03;
+/** --- pilule tout à droite [ SHUTDOWN | NOTIF ] --- */
+#custom-exit {
+    color: @base08; /* Rouge */
+}
+#custom-notification {
+    color: @base08; /* Rouge */
+}
+
+/** --- TODO --- */
+#network {
+    color: @base08;
 }
 #custom-recorder,
 #idle_inhibitor {

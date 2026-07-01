@@ -14,17 +14,17 @@
   modules-left = [
     "hyprland/workspaces"
     "cpu"
-    "gpu"
+    "custom/gpu"
     "memory"
     "disk"
   ];
 
   modules-right = [
-    "custom/exit"
     "pulseaudio"
     "custom/weather"
     "battery"
     "tray"
+    "custom/exit"
     "custom/notification"
   ];
 
@@ -53,11 +53,20 @@
     format = " {usage:2}%";
     tooltip = true;
   };
-  "gpu" = {
-    device = "${vars.hardware.gpu_device}";
-    format = " {usage:2}";
-    tooltip = true;
+
+  "custom/gpu" = {
+    interval = 5;
+    exec =
+      if vars.hardware.gpu_device == "nvidia" then
+        "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits"
+      else if vars.hardware.gpu_device == "amd" then
+        "cat /sys/class/hwmon/hwmon*/device/gpu_busy_percent 2>/dev/null || echo 0"
+      else
+        "echo 0";
+    format = " {}%";
+    tooltip = false;
   };
+
   "disk" = {
     format = " {free}";
     tooltip = true;
