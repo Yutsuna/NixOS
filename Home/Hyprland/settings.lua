@@ -13,7 +13,7 @@ hl.config({
         direct_scanout = true,
     },
 
-misc = {
+    misc = {
         disable_hyprland_logo = true,
         mouse_move_focuses_monitor = true,
         vrr = true,

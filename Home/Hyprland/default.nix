@@ -1,9 +1,23 @@
 {
+  lib,
+  ...
+}:
+let
+  isLua = lib.strings.hasSuffix ".lua";
+  isNotInit = name: name != "init.lua";
+  isRegular = _: type: type == "regular";
 
+  filterLua = name: type: isRegular null type && isLua name && isNotInit name;
+
+  toXdgConfig = name: _: {
+    name = "hypr/${name}";
+    value.source = ./. + "/${name}";
+  };
+in
+{
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
-
     configType = "lua";
 
     systemd = {
@@ -14,12 +28,5 @@
     extraConfig = builtins.readFile ./init.lua;
   };
 
-  xdg.configFile = {
-    "hypr/settings.lua".source = ./settings.lua;
-    "hypr/binds.lua".source = ./binds.lua;
-    "hypr/window.lua".source = ./window.lua;
-    "hypr/exec.lua".source = ./exec.lua;
-    "hypr/animations.lua".source = ./animations.lua;
-  };
-
+  xdg.configFile = lib.mapAttrs' toXdgConfig (lib.filterAttrs filterLua (builtins.readDir ./.));
 }

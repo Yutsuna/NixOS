@@ -1,5 +1,5 @@
 require("settings")
 require("binds")
 require("window")
-require("exec")
 require("animations")
+require("windowrules")
