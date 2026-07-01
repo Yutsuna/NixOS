@@ -13,7 +13,7 @@
       confirm_os_window_close = 0;
       enable_audio_bell = false;
       wheel_scroll_min_lines = 1;
-      window_padding_width = 4;
+      window_padding_width = 12;
       cursor_tail = 1;
       allow_hyperlinks = true;
 
@@ -27,13 +27,13 @@
       layout = "dwindle";
       resize_on_border = "true";
 
-      tab_title_template = "{index}";
-      active_tab_font_style = "normal";
-      inactive_tab_font_style = "normal";
+      tab_bar_edge = "bottom";
       tab_bar_style = "powerline";
-      tab_powerline_style = "round";
+      tab_powerline_style = "slanted";
+      tab_title_template = "{title}{' :{}:'.format(num_windows) if num_windows > 1 else ''}";
 
       background_opacity = "0.85";
+      background_blur = 20;
 
       foreground = "#c6d0f5";
       background = "#303446";
@@ -41,6 +41,7 @@
       selection_background = "#f2d5cf";
 
       cursor = "#f2d5cf";
+      cursor_trail = 1;
       cursor_text_color = "#303446";
 
       scrollbar_handle_color = "#949cbb";
