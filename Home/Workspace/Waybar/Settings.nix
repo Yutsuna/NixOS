@@ -1,8 +1,21 @@
 {
+  pkgs,
   vars,
   ...
 }:
+let
 
+  gpuMonitor = pkgs.writeShellApplication {
+    name = "WaybarGPU";
+    runtimeInputs = with pkgs; [
+      coreutils
+      bash
+    ];
+
+    text = builtins.readFile ./Scripts/WaybarGPU.bash;
+  };
+
+in
 {
   layer = "top";
   position = "top";
@@ -55,16 +68,10 @@
   };
 
   "custom/gpu" = {
-    interval = 5;
-    exec =
-      if vars.hardware.gpu_device == "nvidia" then
-        "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits"
-      else if vars.hardware.gpu_device == "amd" then
-        "cat /sys/class/hwmon/hwmon*/device/gpu_busy_percent 2>/dev/null || echo 0"
-      else
-        "echo 0";
+    exec = "${gpuMonitor}/bin/WaybarGPU ${vars.hardware.gpu_device}";
     format = " {}%";
     tooltip = false;
+    return-type = "";
   };
 
   "disk" = {

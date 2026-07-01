@@ -1,7 +1,7 @@
 { pkgs, vars, ... }:
 let
 
-  settings = [ (import ./Settings.nix { inherit vars; }) ];
+  settings = [ (import ./Settings.nix { inherit pkgs vars; }) ];
   style = builtins.readFile ./styles.scss;
 in
 {
