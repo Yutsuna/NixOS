@@ -15,6 +15,7 @@
     ./Waybar
     ./Swaync
     ./Awww
+    ./Hyprlock
   ];
 
 }

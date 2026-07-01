@@ -21,13 +21,13 @@
       claude-code-nix,
       sops-nix,
       ...
-    }@inputs:
+    }:
     {
 
       nixosConfigurations.NixOS = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
-          inherit claude-code-nix;
+          inherit claude-code-nix self;
           vars = import ./Config.nix;
         };
         modules = [
