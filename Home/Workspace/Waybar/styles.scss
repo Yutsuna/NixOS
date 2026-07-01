@@ -28,122 +28,85 @@ window#waybar {
 
 tooltip {
     background: @base00;
-    border-radius: 15px;
+    border: 1px solid @base02;
+    border-radius: 10px;
 }
 
 tooltip label {
     color: @base05;
+    padding: 4px;
 }
 
 #cpu,
 #custom-exit,
-#tray,
 #network {
+    background: @base00;
     border-radius: 15px 0px 0px 15px;
     margin: 3px 0px 3px 2px;
     padding: 0px 5px 0px 15px;
-    background: @base00;
 }
 
 #memory,
-#pulseaudio,
-#custom-notification {
+#pulseaudio {
+    background: @base00;
     border-radius: 0px 15px 15px 0px;
     margin: 3px 2px 3px 0px;
     padding: 0px 10px 0px 5px;
-    background: @base00;
 }
 
 #window,
 #clock,
 #custom-weather,
-#workspaces {
+#battery,
+#tray,
+#custom-notification {
+    background: @base00;
     border-radius: 15px;
     margin: 3px 4px;
-    padding: 0px 10px;
-    background: @base00;
+    padding: 0px 12px;
 }
 
 #idle_inhibitor,
 #custom-recorder {
+    background: @base00;
     border-radius: 0px;
     margin: 3px 0px;
     padding: 0px 14px;
-    background: @base00;
 }
 
 #workspaces {
     background: @base00;
-    padding: 0px 1px;
+    border-radius: 15px;
+    margin: 3px 4px;
+    padding: 0px 4px;
 }
 
 #workspaces button {
-    padding: 0px 5px;
+    background: transparent;
+    color: @base05;
     border-radius: 15px;
-    margin: 4px 3px;
-    background: @base00;
-    background-size: 300% 300%;
-    animation: gradient_horizontal 15s ease infinite;
+    margin: 4px 2px;
+    padding: 0px 6px;
     opacity: 0.5;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
 }
 
 #workspaces button.active {
-    padding: 0px 5px;
-    border-radius: 15px;
-    margin: 4px 3px;
-    color: @base00;
     background: @base0E;
-    background-size: 300% 300%;
-    animation: gradient_horizontal 15s ease infinite;
-    transition: all 0.3s ease;
-    opacity: 1;
+    color: @base00;
     min-width: 40px;
+    opacity: 1;
 }
 
 #workspaces button:hover {
-    border-radius: 15px;
     background: @base03;
-    background-size: 300% 300%;
-    animation: gradient_horizontal 15s ease infinite;
-    opacity: 0.8;
-    transition: all 0.3s ease;
+    opacity: 0.9;
 }
 
-@keyframes gradient_horizontal {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-@keyframes swiping {
-    0% {
-        background-position: 0% 200%;
-    }
-    100% {
-        background-position: 200% 200%;
-    }
-}
-
-#cpu {
-    color: @base0D;
-}
+#cpu,
 #memory {
     color: @base0D;
 }
-#disk {
-    color: @base03;
-}
-#battery {
-    color: @base08;
-}
-
 #window * {
     color: @base0C;
 }
@@ -151,27 +114,26 @@ tooltip label {
     color: @base0B;
 }
 
-#custom-exit {
-    color: @base0A;
-}
-#custom-recorder {
-    color: @base0A;
-}
-#idle_inhibitor {
-    color: @base0A;
-}
+#custom-exit,
 #pulseaudio {
     color: @base0A;
 }
 #custom-weather {
     color: @base09;
 }
-#network {
-    color: @base08;
+#battery {
+    color: @base0F;
 }
-#tray {
-    color: @base08;
-}
+#tray,
+#network,
 #custom-notification {
     color: @base08;
+}
+
+#disk {
+    color: @base03;
+}
+#custom-recorder,
+#idle_inhibitor {
+    color: @base0A;
 }

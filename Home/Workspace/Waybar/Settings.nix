@@ -20,6 +20,7 @@
     "custom/exit"
     "pulseaudio"
     "custom/weather"
+    "battery"
     "tray"
     "custom/notification"
   ];
