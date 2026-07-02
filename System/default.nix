@@ -1,10 +1,7 @@
 {
-
-  imports = [
-    ./Configuration.nix
-    ./HardwareConfiguration.nix
-    ./UnfreePackages.nix
-    ./Sops.nix
-  ];
-
+  yutsuLib,
+  ...
+}:
+{
+  imports = yutsuLib.scanPaths ./.;
 }
