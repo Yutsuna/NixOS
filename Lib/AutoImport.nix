@@ -14,7 +14,7 @@ let
       (lib.mapAttrs' (mapper path))
     ];
 in
-{
+rec {
   scanPaths =
     path:
     builtins.attrValues (
@@ -36,4 +36,13 @@ in
       _: name: type:
       type == "regular" && hasSuffix ext name && isNotElem exclude name
     ) (_: mapper) path;
+
+  scanNixFiles =
+    path:
+    builtins.attrValues (
+      scanFiles ".nix" [ "default.nix" ] (name: _: {
+        name = name;
+        value = path + "/${name}";
+      }) path
+    );
 }

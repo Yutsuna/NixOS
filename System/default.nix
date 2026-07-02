@@ -3,5 +3,5 @@
   ...
 }:
 {
-  imports = yutsuLib.scanPaths ./.;
+  imports = yutsuLib.scanNixFiles ./.;
 }
