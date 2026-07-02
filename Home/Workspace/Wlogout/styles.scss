@@ -1,79 +1,87 @@
-@define-color base #303446;
-@define-color mantle #292c3c;
-@define-color surface0 #414559;
-@define-color surface1 #51576d;
-@define-color surface2 #626880;
-@define-color text #c6d0f5;
-@define-color rosewater #f2d5cf;
-@define-color lavender #babbf1;
-@define-color red #e78284;
-@define-color peach #ef9f76;
-@define-color yellow #e5c890;
-@define-color green #a6d189;
-@define-color teal #81c8be;
-@define-color blue #8caaee;
-@define-color mauve #ca9ee6;
-@define-color flamingo #eebebe;
+/** Source: hyde / wlogout */
+
+@define-color main-bg  rgba(41, 44, 60, 0.92);
+@define-color act-bg  #626880;
+@define-color hvr-bg  #51576d;
+@define-color btn-txt  #c6d0f5;
+
+
+* {
+    background-image: none;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: ${fontSize}px;
+}
 
 window {
-    font-family: monospace;
-    font-size: 14pt;
-    color: @text;
-    background-color: rgba(48, 52, 70, 0.5);
+    background-color: rgba(35, 38, 52, 0.80);
 }
 
 button {
+    color: @btn-txt;
+    background-color: @main-bg;
+    outline-style: none;
+    border: none;
+    border-width: 0px;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 25%;
-    border: none;
-    background-color: @surface1;
-    margin: 5px;
-    transition:
-        box-shadow 0.2s ease-in-out,
-        background-color 0.2s ease-in-out;
-}
-
-button:hover {
-    background-color: @surface2;
+    background-size: 10%;
+    border-radius: 0px;
+    box-shadow: none;
+    text-shadow: none;
 }
 
 button:focus {
-    background-color: @mauve;
-    color: @base;
+    background-color: @act-bg;
+    background-size: 20%;
+}
+
+button:hover {
+    background-color: @hvr-bg;
+    background-size: 25%;
+    border-radius: ${active_rad}px;
+    transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
+}
+
+button:hover#lock {
+    border-radius: ${active_rad}px ${active_rad}px 0px ${active_rad}px;
+    margin: ${y_hvr}px 0px 0px ${x_hvr}px;
+}
+
+button:hover#logout {
+    border-radius: ${active_rad}px 0px ${active_rad}px ${active_rad}px;
+    margin: 0px 0px ${y_hvr}px ${x_hvr}px;
+}
+
+button:hover#shutdown {
+    border-radius: ${active_rad}px ${active_rad}px ${active_rad}px 0px;
+    margin: ${y_hvr}px ${x_hvr}px 0px 0px;
+}
+
+button:hover#reboot {
+    border-radius: 0px ${active_rad}px ${active_rad}px ${active_rad}px;
+    margin: 0px ${x_hvr}px ${y_hvr}px 0px;
 }
 
 #lock {
-    background-image: image(url("icons/lock.png"));
-}
-#lock:focus {
-    background-image: image(url("icons/lock-hover.png"));
+    background-image: image(url("YutsuScript/lock_white.png"));
+    border-radius: ${button_rad}px 0px 0px 0px;
+    margin: ${y_mgn}px 0px 0px ${x_mgn}px;
 }
 
 #logout {
-    background-image: image(url("icons/logout.png"));
-}
-#logout:focus {
-    background-image: image(url("icons/logout-hover.png"));
-}
-
-#suspend {
-    background-image: image(url("icons/sleep.png"));
-}
-#suspend:focus {
-    background-image: image(url("icons/sleep-hover.png"));
+    background-image: image(url("YutsuScript/logout_white.png"));
+    border-radius: 0px 0px 0px ${button_rad}px;
+    margin: 0px 0px ${y_mgn}px ${x_mgn}px;
 }
 
 #shutdown {
-    background-image: image(url("icons/power.png"));
-}
-#shutdown:focus {
-    background-image: image(url("icons/power-hover.png"));
+    background-image: image(url("YutsuScript/shutdown_white.png"));
+    border-radius: 0px ${button_rad}px 0px 0px;
+    margin: ${y_mgn}px ${x_mgn}px 0px 0px;
 }
 
 #reboot {
-    background-image: image(url("icons/restart.png"));
-}
-#reboot:focus {
-    background-image: image(url("icons/restart-hover.png"));
+    background-image: image(url("YutsuScript/reboot_white.png"));
+    border-radius: 0px 0px ${button_rad}px 0px;
+    margin: 0px ${x_mgn}px ${y_mgn}px 0px;
 }

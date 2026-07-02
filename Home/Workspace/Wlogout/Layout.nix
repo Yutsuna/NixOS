@@ -1,8 +1,14 @@
 [
   {
+    label = "lock";
+    action = "hyprlock";
+    text = "Lock";
+    keybind = "l";
+  }
+  {
     label = "logout";
-    action = "hyprctl dispatch exit 0";
-    text = "Exit";
+    action = "hyprshutdown";
+    text = "Logout";
     keybind = "e";
   }
   {
@@ -10,12 +16,6 @@
     action = "systemctl poweroff";
     text = "Shutdown";
     keybind = "s";
-  }
-  {
-    label = "suspend";
-    action = "systemctl suspend";
-    text = "Suspend";
-    keybind = "u";
   }
   {
     label = "reboot";

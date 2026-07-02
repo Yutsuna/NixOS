@@ -1,5 +1,6 @@
 {
   pkgs,
+  yutsuLib,
   ...
 }:
 
@@ -11,12 +12,5 @@
     pavucontrol
   ];
 
-  imports = [
-    ./Waybar
-    ./Swaync
-    ./Awww
-    ./Hyprlock
-    ./Wlogout
-  ];
-
+  imports = yutsuLib.scanPaths ./.;
 }

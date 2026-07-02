@@ -1,17 +1,16 @@
 {
   self,
+  pkgs,
   ...
 }:
 let
-  layout = import ./Layout.nix;
-  icons = "${self}/Assets/Wlogout";
-  style = builtins.replaceStrings [ ''url("icons/'' ] [ ''url("${icons}/'' ] (
-    builtins.readFile ./styles.scss
-  );
+  launcher = import ./Launcher.nix { inherit pkgs self; };
 in
 {
+  home.packages = [ launcher ];
+
   programs.wlogout = {
     enable = true;
-    inherit layout style;
+    layout = import ./Layout.nix;
   };
 }
