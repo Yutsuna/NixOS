@@ -22,13 +22,22 @@
       sops-nix,
       ...
     }:
+    let
+      vars = import ./Config.nix;
+      system = "${vars.system.architecture}";
+      yutsuLib = import ./Lib { inherit (nixpkgs) lib; };
+    in
     {
 
       nixosConfigurations.NixOS = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit system;
         specialArgs = {
-          inherit claude-code-nix self;
-          vars = import ./Config.nix;
+          inherit
+            claude-code-nix
+            self
+            vars
+            yutsuLib
+            ;
         };
         modules = [
           sops-nix.nixosModules.sops
