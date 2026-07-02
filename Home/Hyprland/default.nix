@@ -1,17 +1,11 @@
 {
-  lib,
+  yutsuLib,
   ...
 }:
 let
-  isLua = lib.strings.hasSuffix ".lua";
-  isNotInit = name: name != "init.lua";
-  isRegular = _: type: type == "regular";
-
-  filterLua = name: type: isRegular null type && isLua name && isNotInit name;
-
   toXdgConfig = name: _: {
     name = "hypr/${name}";
-    value.source = ./. + "/${name}";
+    value.source = ./. + "/Lua/${name}";
   };
 in
 {
@@ -25,8 +19,8 @@ in
       variables = [ "--all" ];
     };
 
-    extraConfig = builtins.readFile ./init.lua;
+    extraConfig = builtins.readFile ./Lua/init.lua;
   };
 
-  xdg.configFile = lib.mapAttrs' toXdgConfig (lib.filterAttrs filterLua (builtins.readDir ./.));
+  xdg.configFile = yutsuLib.scanFiles ".lua" [ "init.lua" ] toXdgConfig ./Lua;
 }
