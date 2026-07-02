@@ -10,6 +10,7 @@
     timezone = "Europe/Paris";
     locale = "en_US.UTF-8";
     keyMap = "fr";
+    architecture = "x86_64-linux";
   };
 
   hardware = {
