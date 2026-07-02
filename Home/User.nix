@@ -1,6 +1,7 @@
 {
   pkgs,
   vars,
+  yutsuLib,
   ...
 }:
 {
@@ -15,15 +16,7 @@
 
   fonts.fontconfig.enable = true;
 
-  imports = [
-    ./Hyprland
-    ./Editors
-    ./Shell
-    ./Terminal
-    ./AI
-    ./Workspace
-    ./Browser
-  ];
+  imports = yutsuLib.scanPaths ./.;
 
   home.packages = with pkgs; [
     vim
