@@ -1,0 +1,12 @@
+[
+  {
+    "label": "NixOS: Run (Test & Switch)",
+    "command": "/bin/sh",
+    "args": [
+      "-c",
+      "cd ~/NixOS && git add -A && nixos-rebuild build --flake ~/NixOS/#NixOS",
+    ],
+    "use_new_terminal": true,
+    "reveal": "always",
+  },
+]

@@ -1,0 +1,14 @@
+{
+  "lsp": {
+    "nil": {
+      "initialization_options": {
+        "nix": {
+          "flake": {
+            "autoEvalInputs": true,
+          },
+        },
+      },
+    },
+  },
+  "format_on_save": "on",
+}
