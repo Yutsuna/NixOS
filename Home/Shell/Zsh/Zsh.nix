@@ -1,8 +1,11 @@
-{ ... }:
+{
+  vars,
+  ...
+}:
 
 let
 
-  shellAliases = import ./Aliases.nix;
+  shellAliases = import ./Aliases.nix { inherit vars; };
 
 in
 {
