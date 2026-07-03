@@ -10,6 +10,7 @@
     wl-clipboard
     wttrbar
     pavucontrol
+    brightnessctl
   ];
 
   imports = yutsuLib.scanPaths ./.;

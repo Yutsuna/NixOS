@@ -30,3 +30,6 @@ hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.resize({ x = 80, y = 0, rel
 hl.bind(mainMod .. " + SHIFT + left", hl.dsp.window.resize({ x = -80, y = 0, relative = true }))
 hl.bind(mainMod .. " + SHIFT + up", hl.dsp.window.resize({ x = 0, y = -80, relative = true }))
 hl.bind(mainMod .. " + SHIFT + down", hl.dsp.window.resize({ x = 0, y = 80, relative = true }))
+
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set +5%"))
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"))
