@@ -2,11 +2,10 @@
 
 {
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "claude"
-    "discord"
-    "spotify"
-    "zed-editor"
-  ];
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      "zed-editor"
+    ];
 
 }

@@ -1,9 +1,11 @@
 {
   ...
 }:
-rec {
 
-  mkSecretEnv =
-    secret:
-    "${secret} = \"\$(if [ -f /run/secrets/${secret} ]; then cat /run/secrets/${secret}; fi)\";";
+rec {
+  mkSecretEnv = secret: ''
+    if [ -f /run/secrets/${secret} ]; then
+      export ${secret}="$(cat /run/secrets/${secret})"
+    fi
+  '';
 }
