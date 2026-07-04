@@ -8,5 +8,3 @@ bindkey '^[[D' backward-char
 bindkey '^?' backward-delete-char
 bindkey '^H' backward-delete-char
 bindkey '^R' history-incremental-search-backward
-
-export PATH="$HOME/.local/bin:$PATH"

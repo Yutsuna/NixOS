@@ -1,11 +1,13 @@
 {
   vars,
+  yutsuLib,
   ...
 }:
 
 let
 
   shellAliases = import ./Aliases.nix { inherit vars; };
+  baseZshConfig = builtins.readFile ./config.zsh;
 
 in
 {
@@ -26,11 +28,12 @@ in
         "command-not-found"
       ];
     };
+    inherit shellAliases;
 
-    shellAliases = shellAliases // {
-      open = "xdg-open";
-    };
-
-    initContent = builtins.readFile ./config.zsh;
+    initContent = ''
+      ${baseZshConfig}
+      ${yutsuLib.mkSecretEnv "MISTRAL_API_KEY"}
+    '';
+    # initContent = baseZshConfig // (yutsuLib.mkSecretEnv "MISTRAL_API_KEY");
   };
 }
