@@ -1,8 +1,9 @@
 {
-  claude-code-nix,
-  vars,
   self,
+  vars,
   yutsuLib,
+  claude-code-nix,
+  graphify,
   ...
 }:
 
@@ -12,10 +13,11 @@
     useUserPackages = true;
     extraSpecialArgs = {
       inherit
-        claude-code-nix
-        vars
         self
+        vars
         yutsuLib
+        claude-code-nix
+        graphify
         ;
     };
     users.${vars.user.name} = import ./User.nix;

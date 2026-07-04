@@ -1,6 +1,7 @@
-{ claude-code-nix
-, pkgs
-, ...
+{
+  claude-code-nix,
+  pkgs,
+  ...
 }:
 
 {

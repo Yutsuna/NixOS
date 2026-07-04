@@ -1,7 +1,7 @@
 {
-
-  imports = [
-    ./Claude.nix
-  ];
-
+  yutsuLib,
+  ...
+}:
+{
+  imports = yutsuLib.scanNixFiles ./.;
 }

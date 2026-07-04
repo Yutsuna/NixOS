@@ -2,15 +2,28 @@
   description = "YutsuOS Flake";
 
   inputs = {
+
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    claude-code-nix.url = "github:sadjow/claude-code-nix";
-    claude-code-nix.inputs.nixpkgs.follows = "nixpkgs";
-    sops-nix.url = "github:Mic92/sops-nix";
-    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    claude-code-nix = {
+      url = "github:sadjow/claude-code-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    graphify = {
+      url = "github:safishamsi/graphify";
+      flake = false;
+    };
   };
 
   outputs =
@@ -20,6 +33,7 @@
       home-manager,
       claude-code-nix,
       sops-nix,
+      graphify,
       ...
     }:
     let
@@ -33,10 +47,11 @@
         inherit system;
         specialArgs = {
           inherit
-            claude-code-nix
             self
             vars
             yutsuLib
+            claude-code-nix
+            graphify
             ;
         };
         modules = [
