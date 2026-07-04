@@ -10,10 +10,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    claude-code-nix = {
-      url = "github:sadjow/claude-code-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    llm-agents.url = "github:numtide/llm-agents.nix";
 
     sops-nix = {
       url = "github:Mic92/sops-nix";
@@ -31,7 +28,7 @@
       self,
       nixpkgs,
       home-manager,
-      claude-code-nix,
+      llm-agents,
       sops-nix,
       graphify,
       ...
@@ -50,7 +47,7 @@
             self
             vars
             yutsuLib
-            claude-code-nix
+            llm-agents
             graphify
             ;
         };
