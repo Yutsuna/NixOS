@@ -2,7 +2,7 @@
   self,
   vars,
   yutsuLib,
-  claude-code-nix,
+  llm-agents,
   graphify,
   ...
 }:
@@ -16,7 +16,7 @@
         self
         vars
         yutsuLib
-        claude-code-nix
+        llm-agents
         graphify
         ;
     };
