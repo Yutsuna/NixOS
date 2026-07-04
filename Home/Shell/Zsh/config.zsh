@@ -8,3 +8,5 @@ bindkey '^[[D' backward-char
 bindkey '^?' backward-delete-char
 bindkey '^H' backward-delete-char
 bindkey '^R' history-incremental-search-backward
+
+export CODESTRAL_API_KEY="$MISTRAL_API_KEY";

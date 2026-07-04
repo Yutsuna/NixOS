@@ -30,10 +30,11 @@ in
     };
     inherit shellAliases;
 
-    initContent = ''
-      ${baseZshConfig}
-      ${yutsuLib.mkSecretEnv "MISTRAL_API_KEY"}
-    '';
-    # initContent = baseZshConfig // (yutsuLib.mkSecretEnv "MISTRAL_API_KEY");
+    initContent =
+      with yutsuLib;
+      builtins.concatStringsSep "\n" [
+        baseZshConfig
+        (mkSecretEnv "MISTRAL_API_KEY")
+      ];
   };
 }
