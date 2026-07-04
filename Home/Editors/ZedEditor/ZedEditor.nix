@@ -18,7 +18,7 @@ in
   programs.zed-editor = {
     enable = true;
     package = pkgs.zed-editor;
-    mutableUserSettings = false;
+    mutableUserSettings = true;
 
     inherit extensions;
 

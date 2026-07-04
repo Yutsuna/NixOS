@@ -2,7 +2,7 @@
   agent = {
     enabled = true;
     default_model = {
-      provider = "copilot_chat";
+      provider = "mistral";
       model = "auto";
     };
     dock = "right";
