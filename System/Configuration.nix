@@ -100,7 +100,12 @@
     nerd-fonts.jetbrains-mono
   ];
 
-  services.openssh.enable = true;
+  services = {
+    openssh.enable = true;
+    gnome.gnome-keyring.enable = true;
+  };
+
+  security.pam.services.sddm.enableGnomeKeyring = true;
 
   ############################################################################################
   # DANGER ZONE
