@@ -10,3 +10,19 @@ bindkey '^H' backward-delete-char
 bindkey '^R' history-incremental-search-backward
 
 export CODESTRAL_API_KEY="$MISTRAL_API_KEY";
+
+function show
+{
+    local source="$1"||"."
+    local extension="$2"||"*"
+
+    for f in $(find "$source" -name "*.$extension" -type f);
+    do
+
+        echo "\`\`\`$extension"
+        cat "$f"
+        echo "\`\`\`"
+
+    done
+
+}

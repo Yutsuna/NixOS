@@ -35,6 +35,7 @@ in
       builtins.concatStringsSep "\n" [
         baseZshConfig
         (mkSecretEnv "MISTRAL_API_KEY")
+        (mkSecretEnv "GEMINI_API_KEY")
       ];
   };
 }
