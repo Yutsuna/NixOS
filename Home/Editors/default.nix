@@ -1,5 +1,11 @@
+{ pkgs, ... }:
+
 {
-  imports = [
-    ./ZedEditor/ZedEditor.nix
-  ];
+  programs.zed-editor = with pkgs; {
+    enable = true;
+    extraPackages = [
+      nil
+      nixd
+    ];
+  };
 }
