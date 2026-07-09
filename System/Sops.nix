@@ -15,6 +15,9 @@
       "MISTRAL_API_KEY" = {
         owner = vars.user.name;
       };
+      "GEMINI_API_KEY" = {
+        owner = vars.user.name;
+      };
     };
   };
 }
