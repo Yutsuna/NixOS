@@ -10,7 +10,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    llm-agents.url = "github:Yutsuna/llm-agents.nix";
+    llm-agents.url = "github:numtide/llm-agents.nix";
 
     sops-nix = {
       url = "github:Mic92/sops-nix";
