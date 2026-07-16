@@ -11,18 +11,16 @@ bindkey '^R' history-incremental-search-backward
 
 export CODESTRAL_API_KEY="$MISTRAL_API_KEY";
 
-function show
-{
-    local source="$1"||"."
-    local extension="$2"||"*"
+function show() {
+    local source="${1:-.}"
+    shift
 
-    for f in $(find "$source" -name "*.$extension" -type f);
-    do
+    local pattern="${${@:+((${(j:|:)@}))}:-*}"
 
-        echo "\`\`\`$extension"
+    local f
+    for f in $source/**/*.$~pattern(N.); do
+        echo "\`\`\`${f##*.}"
         cat "$f"
-        echo "\`\`\`"
-
+        echo "\`\`\`\n"
     done
-
 }
