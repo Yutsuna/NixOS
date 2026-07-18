@@ -1,3 +1,7 @@
+/* ==========================================================================
+   SwayNC - Catppuccin Frappé (Style Minimaliste sans bordures)
+   ========================================================================== */
+
 @define-color rosewater #f2d5cf;
 @define-color flamingo #eebebe;
 @define-color pink #f4b8e4;
@@ -27,7 +31,9 @@
 
 * {
   font-family: "JetBrainsMono Nerd Font", sans-serif;
+  font-size: 12px;
   font-weight: 500;
+  transition: all 0.2s ease;
 }
 
 notificationwindow, blankwindow {
@@ -35,130 +41,130 @@ notificationwindow, blankwindow {
   background-color: transparent;
 }
 
-
 .control-center {
-  background: alpha(@base, 0.85);
-  border: 2px solid @mauve;
-  border-radius: 12px;
+  background: alpha(@base, 0.90);
+  border: none;
+  border-radius: 15px;
   margin: 8px;
-  padding: 10px;
+  padding: 16px;
   color: @text;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 .control-center .control-center-list {
   background: transparent;
 }
 
-
 .control-center .control-center-list-placeholder {
   opacity: 0.5;
   color: @subtext0;
 }
 
-
 .widget-title {
-  margin: 10px;
+  margin: 4px 10px 14px 10px;
 }
 .widget-title > label {
-  font-size: 1.3rem;
-  font-weight: bold;
+  font-size: 15px;
+  font-weight: 700;
   color: @text;
 }
 .widget-title > button {
   background: @surface1;
   color: @red;
-  border-radius: 8px;
+  border: none;
+  border-radius: 10px;
   padding: 6px 12px;
-  border: 1px solid @surface2;
+  font-weight: 700;
 }
 .widget-title > button:hover {
   background: @red;
   color: @crust;
-  border-color: @red;
 }
-
 
 .widget-dnd {
   margin: 10px;
-  font-size: 1.1rem;
+  font-size: 13px;
   color: @text;
 }
 .widget-dnd > switch {
   background: @surface1;
-  border-radius: 12px;
-  border: 1px solid @surface2;
+  border: none;
+  border-radius: 15px;
 }
 .widget-dnd > switch:checked {
   background: @green;
 }
 .widget-dnd > switch slider {
   background: @text;
-  border-radius: 10px;
+  border-radius: 12px;
 }
-
 
 .notification {
   background: @surface0;
-  border: 1px solid @surface1;
-  border-radius: 10px;
-  margin: 8px;
-  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  margin: 8px 0px;
+  padding: 14px;
   color: @text;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 .notification:hover {
-  border-color: @mauve;
+  background: @surface1;
 }
 .notification-content {
   margin: 4px;
 }
 .notification-title {
-  font-weight: bold;
-  font-size: 1.1rem;
+  font-weight: 700;
+  font-size: 13px;
   color: @lavender;
 }
 .notification-body {
   color: @subtext1;
-  font-size: 0.95rem;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
 }
 .notification-action {
   background: @surface1;
-  border: 1px solid @surface2;
+  border: none;
   border-radius: 8px;
   color: @text;
   margin-top: 8px;
-  padding: 6px;
+  padding: 8px;
+  font-weight: 700;
 }
 .notification-action:hover {
   background: @mauve;
   color: @crust;
-  border-color: @mauve;
 }
-
 
 .widget-mpris {
   background: @surface0;
-  border: 1px solid @surface1;
+  border: none;
   border-radius: 12px;
-  padding: 12px;
-  margin: 8px;
+  padding: 14px;
+  margin: 8px 0px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 .widget-mpris-player {
   background: transparent;
 }
 .widget-mpris-title {
-  font-size: 1.1rem;
-  font-weight: bold;
+  font-size: 13px;
+  font-weight: 700;
   color: @text;
 }
 .widget-mpris-subtitle {
-  font-size: 0.9rem;
+  font-size: 11px;
   color: @subtext1;
 }
 .widget-mpris button {
   background: @surface1;
   color: @text;
-  border-radius: 8px;
-  padding: 6px;
+  border: none;
+  border-radius: 10px;
+  padding: 8px;
   margin: 0 4px;
 }
 .widget-mpris button:hover {
@@ -166,18 +172,18 @@ notificationwindow, blankwindow {
   color: @crust;
 }
 
-
 .widget-volume, .widget-backlight {
   background: @surface0;
-  border: 1px solid @surface1;
+  border: none;
   border-radius: 12px;
-  padding: 12px;
-  margin: 8px;
+  padding: 14px;
+  margin: 8px 0px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 .widget-volume label {
-  font-size: 1.2rem;
+  font-size: 14px;
   color: @blue;
-  margin-right: 8px;
+  margin-right: 10px;
 }
 .widget-volume trough highlight {
   background: @blue;
@@ -185,19 +191,19 @@ notificationwindow, blankwindow {
 .widget-volume trough {
   background: @surface1;
   border-radius: 6px;
-  min-height: 10px;
+  min-height: 8px;
 }
 .widget-volume slider {
   background: @text;
   border-radius: 50%;
-  min-height: 14px;
-  min-width: 14px;
+  min-height: 12px;
+  min-width: 12px;
 }
 
 .widget-backlight label {
-  font-size: 1.2rem;
+  font-size: 14px;
   color: @yellow;
-  margin-right: 8px;
+  margin-right: 10px;
 }
 .widget-backlight trough highlight {
   background: @yellow;
@@ -205,33 +211,33 @@ notificationwindow, blankwindow {
 .widget-backlight trough {
   background: @surface1;
   border-radius: 6px;
-  min-height: 10px;
+  min-height: 8px;
 }
 .widget-backlight slider {
   background: @text;
   border-radius: 50%;
-  min-height: 14px;
-  min-width: 14px;
+  min-height: 12px;
+  min-width: 12px;
 }
-
 
 .widget-buttons-grid {
   background: @surface0;
-  border: 1px solid @surface1;
+  border: none;
   border-radius: 12px;
   padding: 8px;
-  margin: 8px;
+  margin: 8px 0px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 .widget-buttons-grid > flowbox > flowboxchild > button {
   background: @surface1;
-  border: 1px solid @surface2;
+  border: none;
   border-radius: 10px;
-  padding: 10px;
+  padding: 12px;
   margin: 4px;
   color: @text;
+  font-size: 14px;
 }
 .widget-buttons-grid > flowbox > flowboxchild > button:hover {
   background: @mauve;
   color: @crust;
-  border-color: @mauve;
 }
