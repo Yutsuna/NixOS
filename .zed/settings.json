@@ -1,0 +1,22 @@
+{
+  "format_on_save": "on",
+  "languages": {
+    "Nix": {
+      "language_servers": ["nil", "!nixd"],
+      "formatter": {
+        "external": {
+          "command": "nixfmt",
+        },
+      },
+    },
+  },
+  "lsp": {
+    "nil": {
+      "initialization_options": {
+        "formatting": {
+          "command": ["nixfmt"],
+        },
+      },
+    },
+  },
+}
