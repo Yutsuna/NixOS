@@ -1,8 +1,7 @@
-{ config, pkgs, ... }:
-
 {
-  imports = [
-    ./Kitty.nix
-    ./Starship.nix
-  ];
+  yutsuLib,
+  ...
+}:
+{
+  imports = yutsuLib.scanNixFiles ./.;
 }
