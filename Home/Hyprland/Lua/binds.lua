@@ -3,7 +3,7 @@ local mainMod = "SUPER"
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd("kitty"))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("firefox"))
 hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("zeditor"))
--- hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("vesktop"))
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("vesktop"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("hyprshot -m region"))
 
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
