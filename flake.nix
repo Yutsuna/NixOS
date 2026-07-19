@@ -37,9 +37,10 @@
       vars = import ./Config.nix;
       system = "${vars.system.architecture}";
       yutsuLib = import ./Lib { inherit (nixpkgs) lib; };
+      pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-
+      devShells.${system}.default = import ./Shell.nix { inherit pkgs; };
       nixosConfigurations.NixOS = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
