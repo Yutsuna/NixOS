@@ -19,7 +19,7 @@ function show() {
 
     local f
     for f in $source/**/*.$~pattern(N.); do
-        echo "\`\`\`${f##*.}"
+        echo -e "file: $f\n\`\`\`${f##*.}"
         cat "$f"
         echo "\`\`\`\n"
     done
