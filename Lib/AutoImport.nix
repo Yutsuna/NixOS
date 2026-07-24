@@ -45,4 +45,6 @@ rec {
         value = path + "/${name}";
       }) path
     );
+
+  scanNix = path: (scanNixFiles path) ++ (scanPaths path);
 }
