@@ -26,5 +26,4 @@ function show()
     done
 }
 
-export -f show
 export EDITOR="vim"
