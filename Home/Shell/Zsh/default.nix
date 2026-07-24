@@ -36,6 +36,7 @@ in
         baseZshConfig
         (mkSecretEnv "MISTRAL_API_KEY")
         (mkSecretEnv "GEMINI_API_KEY")
+        (mkSecretEnv "OPENROUTER_API_KEY")
       ];
   };
 }
