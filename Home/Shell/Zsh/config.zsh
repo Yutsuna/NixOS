@@ -11,8 +11,7 @@ bindkey '^R' history-incremental-search-backward
 
 export CODESTRAL_API_KEY="$MISTRAL_API_KEY";
 
-function show()
-{
+function show() {
     local source="${1:-.}"
     shift
 
@@ -25,5 +24,3 @@ function show()
         echo "\`\`\`\n"
     done
 }
-
-export EDITOR="vim"
