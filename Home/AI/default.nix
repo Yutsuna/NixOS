@@ -12,6 +12,7 @@
       antigravity-cli
       mistral-vibe
       copilot-cli
+      kimi-code
     ])
     ++ (with pkgs; [
       clang-tools
