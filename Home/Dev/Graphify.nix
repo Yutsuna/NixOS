@@ -4,7 +4,16 @@
   ...
 }:
 
-with pkgs.python3Packages;
+let
+  python3Packages = pkgs.python3Packages.override {
+    overrides = self: super: {
+      pybloomfilter3 = super.pybloomfilter3.overridePythonAttrs (old: {
+        dontCheckPythonMetadata = true;
+      });
+    };
+  };
+in
+with python3Packages;
 let
   graphify-pkg = buildPythonApplication {
     pname = "graphify";
@@ -26,7 +35,7 @@ let
       rapidfuzz
       tree-sitter
     ]
-    ++ (with tree-sitter-grammars; [
+    ++ (builtins.map (g: g.overridePythonAttrs (old: { dontCheckPythonMetadata = true; })) (with tree-sitter-grammars; [
       tree-sitter-python
       tree-sitter-javascript
       tree-sitter-typescript
@@ -51,7 +60,7 @@ let
       tree-sitter-bash
       tree-sitter-json
       tree-sitter-crystal
-    ]);
+    ]));
 
     doCheck = false;
   };
