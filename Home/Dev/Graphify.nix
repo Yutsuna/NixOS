@@ -4,7 +4,7 @@
   ...
 }:
 
-with pkgs.python312Packages;
+with pkgs.python3Packages;
 let
   graphify-pkg = buildPythonApplication {
     pname = "graphify";
