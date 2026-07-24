@@ -8,14 +8,16 @@
   home = {
     username = vars.user.name;
     homeDirectory = vars.user.home;
+
+    sessionVariables = {
+      EDITOR = "vim";
+      VISUAL = "vim";
+    };
+
   };
 
   programs = {
     home-manager.enable = true;
-  };
-
-  sessionVariables = {
-    EDITOR = "vim";
   };
 
   fonts.fontconfig.enable = true;

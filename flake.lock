@@ -57,11 +57,11 @@
     "graphify": {
       "flake": false,
       "locked": {
-        "lastModified": 1784760975,
-        "narHash": "sha256-3pecyBLPQkHMgjF2rVVhOqX0yl2wF5KyjDGrHDtK41k=",
+        "lastModified": 1784934580,
+        "narHash": "sha256-2ic9OGMO8VCpfU/DpCOhagF0exPArzF651DLy+DmWTM=",
         "owner": "safishamsi",
         "repo": "graphify",
-        "rev": "2fa6cd3d5548577f8c5f591b713f0bf80c1af183",
+        "rev": "66d8110a534b52df3d660b5fda5aa5461a6b667a",
         "type": "github"
       },
       "original": {
