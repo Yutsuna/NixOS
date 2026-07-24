@@ -14,6 +14,10 @@
     home-manager.enable = true;
   };
 
+  sessionVariables = {
+    EDITOR = "vim";
+  };
+
   fonts.fontconfig.enable = true;
 
   imports = yutsuLib.scanPaths ./.;
