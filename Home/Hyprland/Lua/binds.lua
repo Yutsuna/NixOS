@@ -23,6 +23,8 @@ hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
 
+hl.bind("CTRL + ESCAPE", hl.dsp.exec_cmd("pkill -SIGUSR1 waybar"))
+
 local azerty = { "ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "minus", "egrave", "underscore",
     "ccedilla", "agrave" }
 for i, key in ipairs(azerty) do
