@@ -1,5 +1,9 @@
 hl.config({
 
+    xwayland = {
+        force_zero_scaling = true,
+    },
+
     input = {
         kb_layout = "fr",
         follow_mouse = 1,
