@@ -3,6 +3,11 @@ local mainMod = "SUPER"
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd("kitty"))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("firefox"))
 hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("zeditor"))
+
+if os.execute("command -v clion") then
+    hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("clion"))
+end
+
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("vesktop"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("hyprshot -m region"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("kitty -e yazi"))
