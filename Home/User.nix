@@ -12,11 +12,11 @@
     sessionVariables = {
       EDITOR = "vim";
       VISUAL = "vim";
-      ELECTRON_OZONE_PLATFORM_HINT = "wayland";
+      # ELECTRON_OZONE_PLATFORM_HINT = "wayland";
       QT_QPA_PLATFORM = "wayland;xcb";
-      GDK_BACKEND = "wayland,x11";
+      # GDK_BACKEND = "wayland,x11";
       SDL_VIDEODRIVER = "wayland";
-      _JAVA_AWT_WM_NONREPARENTING = "1";
+      # _JAVA_AWT_WM_NONREPARENTING = "1";
     };
 
   };
