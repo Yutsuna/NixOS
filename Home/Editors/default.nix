@@ -1,11 +1,7 @@
-{ pkgs, ... }:
-
 {
-  programs.zed-editor = with pkgs; {
-    enable = true;
-    extraPackages = [
-      nil
-      nixd
-    ];
-  };
+  yutsuLib,
+  ...
+}:
+{
+  imports = yutsuLib.scanNixFiles ./.;
 }
