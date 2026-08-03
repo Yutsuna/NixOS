@@ -16,11 +16,6 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    graphify = {
-      url = "github:safishamsi/graphify";
-      flake = false;
-    };
   };
 
   outputs =
@@ -30,7 +25,6 @@
       home-manager,
       llm-agents,
       sops-nix,
-      graphify,
       ...
     }:
     let
@@ -49,7 +43,6 @@
             vars
             yutsuLib
             llm-agents
-            graphify
             ;
         };
         modules = [

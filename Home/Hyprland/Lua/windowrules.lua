@@ -1,6 +1,8 @@
 hl.window_rule({ match = { class = "^(kitty)$" }, opacity = "0.80 0.80 1.0" })
 hl.window_rule({ match = { class = "^(firefox)$" }, opacity = "0.90 0.90 1.0" })
 hl.window_rule({ match = { class = "^(zeditor)$" }, opacity = "0.80 0.80 1.0" })
+hl.window_rule({ match = { class = "^(jetbrains-clion)$" }, opacity = "0.80 0.80 1.0" })
+
 
 local blurred_layers = {
     "rofi",

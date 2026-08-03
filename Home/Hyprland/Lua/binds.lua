@@ -6,6 +6,8 @@ hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("zeditor"))
 
 if os.execute("command -v clion") then
     hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("clion"))
+else
+    hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("jetbrains-toolbox"))
 end
 
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("vesktop"))
