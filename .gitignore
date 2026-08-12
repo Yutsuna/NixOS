@@ -4,3 +4,4 @@
 .sops.yaml
 result
 .direnv
+.idea/
