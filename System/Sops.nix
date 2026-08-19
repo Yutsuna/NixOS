@@ -18,6 +18,7 @@
           "MISTRAL_API_KEY"
           "GEMINI_API_KEY"
           "OPENROUTER_API_KEY"
+          "MOONSHOT_API_KEY"
         ]
         (_: {
           owner = vars.user.name;
