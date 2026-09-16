@@ -7,7 +7,7 @@
 
   system = {
     hostname = "NixOS";
-    timezone = "Europe/Paris";
+    timezone = "China/Shanghai";
     locale = "en_US.UTF-8";
     keyMap = "fr";
     architecture = "x86_64-linux";
@@ -19,6 +19,6 @@
     gpu_device = "amd";
   };
 
-  location = "Strasbourg";
+  location = "Shanghai";
 
 }

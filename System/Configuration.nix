@@ -40,6 +40,11 @@
     efi.efiSysMountPoint = "/boot/efi";
   };
 
+  # Disable ASPM for mt7921e to fix random bad connection issues on some devices.
+  boot.extraModprobeConfig = ''
+    options mt7921e disable_aspm=1
+  '';
+
   time = {
     hardwareClockInLocalTime = true;
     timeZone = vars.system.timezone;
@@ -47,7 +52,10 @@
 
   networking = {
     hostName = vars.system.hostname;
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      wifi.powersave = false;
+    };
   };
 
   i18n.defaultLocale = vars.system.locale;
@@ -64,7 +72,6 @@
   programs = {
     hyprland.enable = true;
     zsh.enable = true;
-
     mtr.enable = true;
     gnupg.agent = {
       enable = true;
@@ -98,6 +105,7 @@
     sops
     ssh-to-age
     cachix
+    networkmanagerapplet
   ];
 
   fonts.packages = with pkgs; [
